@@ -1,2 +1,2 @@
 # electron-debug-tests
-My debug tests for electron.io
+This project is intended to house various stress tests for Electron.io engine.
