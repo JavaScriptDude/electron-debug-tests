@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DevTools Break Test</title>
+  </head>
+  <body>
+
+    <script>
+        var bootAfterPause = true
+        var pauseTime = 1000
+
+        function guiBoot(){
+            debugger;
+            alert('Should have had debugger stop code before this message')
+        }
+
+        if(bootAfterPause){
+            setTimeout(guiBoot, pauseTime)
+        } else {
+            guiBoot();
+        }
+
+    </script>
+  </body>
+</html>
