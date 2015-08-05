@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DevTools Break Test</title>
+  </head>
+  <body>
+
+    <script>
+    
+        var bootAfterPause = false
+        var pauseTime = 1000
+        
+        function guiBoot(){
+            debugger;
+            alert('Should have had debugger stop code before this message')
+        }
+        
+        var gui = require('nw.gui');
+        var win = gui.Window.get();
+        win.showDevTools() 
+        
+        win.on("devtools-opened", function(url) {
+        
+            if(bootAfterPause){
+                setTimeout(guiBoot, pauseTime)
+            } else {
+                guiBoot();
+            }
+        
+        });
+
+
+
+    </script>
+  </body>
+</html>
