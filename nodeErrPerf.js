@@ -21,8 +21,8 @@ const ITERATIONS=10000
 
 function doTests(){
 
-    if(process.argv.length < 3){q$.qErr('Need 1 or two args passed')}
-        clazz = process.argv[2]
+    if(process.argv.length < 3){throw new Error('Need 1 or two args passed')}
+    clazz = process.argv[2]
     if(process.argv.length > 3){
         getStack = process.argv[3]
     }
